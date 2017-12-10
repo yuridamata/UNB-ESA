@@ -16,7 +16,7 @@ concept_directory = 'conceitos'
 text_directory = "textos"
 
 # Define como atribuir os conceitos aos textos.
-classificador = UNB_ESA.Classifier("cosseno")
+classificador = UNB_ESA.CosineClassifier()
 
 # Executa o algoritmo
 result = run(concept_directory, text_directory, classificador)
