@@ -34,10 +34,7 @@ class BaseClassifier(ABC):
     para extender o UNB-ESA deverão ter como base esta classe, implementar estes métodos
     e retornar valores do mesmo tipo deles.
     
-    """
-    def __init__(self,name):        
-        self.name = name;
-        
+    """       
     @abstractmethod
     def getSim(self,semanticInterpreter,doc1,doc2):
         """
@@ -316,7 +313,7 @@ class SemanticInterpreter(BaseSemanticInterpreter):
     
 
     
-class Classifier(BaseClassifier):        
+class CosineClassifier(BaseClassifier):        
         
     
     def _getCosineSimilarity(self,doc1,doc2,semanticInterpreter):
