@@ -371,9 +371,6 @@ def run(concept_directory,text_directory,classifier,verbose=True):
     texts = os.listdir(text_directory) 
     concepts = os.listdir(concept_directory)
     resultado = {}
-    
-
-    print("Classificador: " + classifier.name )
     for text in texts:
         print("Processando Arquivo "+text)
         if(verbose):
