@@ -1,6 +1,6 @@
-UnB - ESA
+<h1>UnB - ESA</h1>
 
-Introdução
+<h3>Introdução</h3>
 
 Este repositório contém o módulo python UNB_ESA, criada com base na ferramenta A2E, fruto dos seguintes trabalhos:
 
@@ -13,7 +13,7 @@ Seguindo esta mesma ideia, o UNB_ESA tem por objetivo receber um conjunto qualqu
 
 Na versão 1.0 da ferramenta o classificador funciona vinculando o texto de maior similaridade com o texto recebido.
 
-Instalação e Configuração
+<h3>Instalação e Configuração</h3>
 
 As ferramentas utilizadas no UNB-ESA são:
 
@@ -29,7 +29,7 @@ No caso de ambientes linux, uma grande parte das distribuições já vem com o p
 
 sudo apt-get install python
 
-pip
+<strong>pip</strong>
 
 O pip é um sistema de gerenciamento de pacotes usado para instalar e gerenciar pacotes de software escritos na linguagem de programação Python. Esta é a ferramenta recomendada pela Python Packaging Authority(PyPA). Link de download
 
@@ -37,7 +37,7 @@ Comando para instalação em ambiente linux:
 
 sudo apt-get install python-pip
 
-NLTK
+<strong>NLTK</strong>
 
 O Natural Language Tool Kit (NLTK) é um pacote Python que fornece ferramentas para o processamento de linguagem natural.
 
@@ -45,36 +45,35 @@ Instalação via pip:
 
 Abra a linha de comando do seu sistema operacional (após ter instalado o pip)
 Execute o comando: pip install -U nltk
-Minimum Working Example
 
-Para ilustrar o funcionamento do módulo, é disponibilizada a seguinte base de dados:
 
-baseMWE Dez conceitos de segurança de software, oriundos da lista "OWASP TOP TEN" traduzidas para o português. Dez textos retirados da internet discorrendo sobre cada um dos conceitos.
+<h3>Minimum Working Example</h3>
+
+
+Para ilustrar o funcionamento do módulo, são disponibilizadas duas pastas:
+
+
+<strong>Conceitos</strong>: 10 Conceitos constituídos por notícias extraídas da base CETEN-Folha;
+<strong>Textos</strong>: 30 notícias extraídas da base CETEN-Folha.
 
 O script "runMWE.py" utiliza o módulo UNB-ESA para testar a similaridade entre os textos e os conceitos.
 
-No trecho abaixo são importadas as classes disponibilizadas pelo módulo
+    import UNB_ESA
 
-from UNB_ESA import Corpus
-from UNB_ESA import SemanticInterpreter
-from UNB_ESA import Classifier
-Após isso, é criada uma lista contendo o nomes dos arquivos contendo os conceitos:
+    concept_directory = 'conceitos'
+    # Diretório com os textos a serem classificados. Os textos são identificados
+    # pelo nome do apenas arquivo.
+    text_directory = "textos"
 
-conceptsSegurancaSoftware = ['A10RedirecionamentosInvalidos.txt','A1injection.txt','A2QuebraAutenticacaoAutorizacao.txt','A3XSS.txt','A4ReferenciaInsegura.txt','A5ConfiguracaoInadequada.txt','A6ExposicaoDadosSensiveis.txt','A7FaltaFuncaoControleAcesso.txt','A8CRSF.txt','A9UtilizacaoComponentesVulnerabilidadeConhecida.txt'] 
-Por fim, é executado um Loop comparando cada um dos conceitos aos textos retirados da internet. Seguem alguns comentários sobre os trechos mais importantes do código:
+    # Define como atribuir os conceitos aos textos.
+    classificador = UNB_ESA.CosineClassifier()
 
-No trecho abaixo é criado o Corpus contendo a representação dos conceitos e dos textos retirados da internet. Já na linha que segue, são realizadas as operações de pré-processamento, como stemming, retirada de pontuação, retirada de acentuação e etc.
+    # Executa o algoritmo
+    result = UNB_ESA.run(concept_directory, text_directory, classificador)
 
-corpus = Corpus(conceptFolder)   
-corpus.clearCorpus() 
-Depois de criado o Corpus, é necessária uma instância da classe SemanticInterpreter, responsável por construir uma representação semântic dos textos contidos no corpus. O método fitCorpusTfidf cria o modelo como um vetor de pesos TF-IDF para cada um dos documentos.
+    for text_file_name, concept_file_name in result.items():
+        print('{} -> {}'.format(text_file_name, concept_file_name))
 
-interpretador = SemanticInterpreter(corpus)
-interpretador.fitCorpusTfidf()
-Por fim, o trecho que segue utiliza o interpretador semantico para verificar a similaridade entre os textos e os conceitos. A variável similaridade é um dicionário contendo o nome de cada um dos textos e sua similaridade com os conceitos. Por padrão, o método classifyDocument() utiliza a Cossenos para computar a similaridade entre os textos.
+Após a execução do código, serão exibidos todos os textos e os conceitos associados a eles.
 
-classificador = Classifier()
-similaridadesAux = {}
-for documentAux in listFiles:
-    similaridadesAux = classificador.classifyDocument(interpretador,listFiles,concept)         
-similaridades = classificador.sortDictByValue(similaridadesAux)
+
