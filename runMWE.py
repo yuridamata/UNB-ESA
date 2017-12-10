@@ -19,7 +19,7 @@ text_directory = "textos"
 classificador = UNB_ESA.CosineClassifier()
 
 # Executa o algoritmo
-result = run(concept_directory, text_directory, classificador)
+result = UNB_ESA.run(concept_directory, text_directory, classificador)
 
 for text_file_name, concept_file_name in result.items():
     print('{} -> {}'.format(text_file_name, concept_file_name))
