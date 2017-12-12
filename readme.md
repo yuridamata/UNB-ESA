@@ -2,12 +2,13 @@
 
 <h3>Introdução</h3>
 
-Este repositório contém o módulo python UNB_ESA, criada com base na ferramenta A2E, fruto dos seguintes trabalhos:
+Este repositório contém o módulo python UNB_ESA, criado com base na ferramenta A2E, fruto dos seguintes trabalhos:
 <ul>
    <li><strong>Dissertação de Mestrado (UnB)</strong>: Avaliação semântica da integração da gestão de riscos de segurança em documentos de software da administração pública. <a href="http://repositorio.unb.br/handle/10482/18827">Link</a></li>
    
    <li><strong>Artigo em Conferência (BRACIS 2016)</strong>: Automatic Identification of Security Risks in Edicts for Software Procurement <a href="http://ieeexplore.ieee.org/document/7839598/?reload=true">Link</a></li>     
 </ul>    
+
 O A2E tem como objetivo verificar se um conjunto de requisitos de segurança de software estão contemplados em editais de licitação da Administração Pública Federal brasileira. Para tanto, é proposta uma adaptação do algoritmo Explicit Semantic Analysis (ESA), proposto em:
 
 Computing Semantic Relatedness using Wikipedia-based Explicit Semantic Analysis (disponível em  https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-259.pdf)
@@ -29,7 +30,7 @@ As ferramentas utilizadas no UNB-ESA são:
 
 <strong>Download e instalação do Python</strong>
 
-Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991. Atualmente possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização sem fins lucrativos Python Software Foundation. Atualmente é uma das linguagens mais utilizadas na Ciência de Dados. Link de download
+Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991. Atualmente possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização sem fins lucrativos Python Software Foundation. Atualmente é uma das linguagens mais utilizadas na Ciência de Dados.
 
 No caso de ambientes linux, uma grande parte das distribuições já vem com o python instalado nativamente. O comando para instalar , via terminal, é
 
