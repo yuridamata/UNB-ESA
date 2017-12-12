@@ -6,7 +6,7 @@ Este repositório contém o módulo python UNB_ESA, criada com base na ferrament
 <ul>
    <li><strong>Dissertação de Mestrado (UnB)</strong>: Avaliação semântica da integração da gestão de riscos de segurança em documentos de software da administração pública. <a href="http://repositorio.unb.br/handle/10482/18827">Link</a></li>
    
-   <li>strong>Artigo em Conferência (BRACIS 2016)</strong>: Automatic Identification of Security Risks in Edicts for Software Procurement <a href="http://ieeexplore.ieee.org/document/7839598/?reload=true">Link</a></li>     
+   <li><strong>Artigo em Conferência (BRACIS 2016)</strong>: Automatic Identification of Security Risks in Edicts for Software Procurement <a href="http://ieeexplore.ieee.org/document/7839598/?reload=true">Link</a></li>     
 </ul>    
 O A2E tem como objetivo verificar se um conjunto de requisitos de segurança de software estão contemplados em editais de licitação da Administração Pública Federal brasileira. Para tanto, é proposta uma adaptação do algoritmo Explicit Semantic Analysis (ESA), proposto em:
 
